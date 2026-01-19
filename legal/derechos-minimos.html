@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta de Derechos Mínimos | MiISP</title>
+  <meta name="description" content="Carta de derechos mínimos de los usuarios del servicio de Internet conforme a la NOM-184-SCFI-2018.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* Contenedor principal para documentos */
+    .legal-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #ffffff;
+        min-height: 80vh;
+    }
+
+    /* Encabezado con Título y Botón (Igual que en privacidad) */
+    .doc-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--color-border, #e2e8f0);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+
+    .doc-header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        color: var(--color-primary, #0b3c5d);
+    }
+
+    /* Botón de descarga */
+    .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--color-secondary, #e91e63);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-download:hover {
+        background-color: #c2185b;
+        transform: translateY(-2px);
+        color: white;
+    }
+
+    /* Visor de PDF */
+    .pdf-viewer {
+        width: 100%;
+        height: 800px; /* Altura fija considerable para lectura cómoda */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Mensaje de fallback por si el navegador no soporta PDF */
+    .pdf-fallback {
+        text-align: center;
+        padding: 2rem;
+        background-color: #f8fafc;
+        border: 1px dashed #cbd5e1;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+        .legal-container { padding: 1rem; }
+        .doc-header { flex-direction: column; align-items: flex-start; }
+        .pdf-viewer { height: 500px; } /* Altura ajustada para móviles */
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<main>
+  <section class="legal-container">
+    
+    <!-- Encabezado -->
+    <div class="doc-header">
+        <h1>Carta de Derechos Mínimos</h1>
+        
+        <!-- Botón de descarga -->
+        <!-- Asegúrate de que el nombre del archivo coincida con el que subiste -->
+        <a href="carta_min_der.pdf" download="Carta_Derechos_Minimos.pdf" class="btn-download">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Descargar PDF
+        </a>
+    </div>
+
+    <p style="margin-bottom: 2rem; color: #555;">
+      En cumplimiento con la <strong>NOM-184-SCFI-2018</strong>, ponemos a su disposición la Carta de Derechos Mínimos de los Usuarios de Servicios Públicos de Telecomunicaciones. Puede leerla a continuación o descargarla para su consulta posterior.
+    </p>
+
+    <!-- VISOR DE PDF -->
+    <!-- data: Ruta al archivo PDF -->
+    <object 
+        data="carta_min_der.pdf" 
+        type="application/pdf" 
+        class="pdf-viewer"
+        aria-label="Visor de PDF de la Carta de Derechos Mínimos"
+    >
+        <!-- Contenido alternativo si el navegador no soporta la visualización -->
+        <div class="pdf-fallback">
+            <p>Tu navegador no puede visualizar el PDF directamente.</p>
+            <a href="carta_min_der.pdf" class="btn-download">
+                Haz clic aquí para descargarlo
+            </a>
+        </div>
+    </object>
+
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

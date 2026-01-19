@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contáctanos | MiISP</title>
+
+  <meta name="description"
+        content="Contacto con MiISP. Solicita información, soporte o atención al cliente de forma clara y directa.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="canonical" href="https://www.miisp.com/contact.html">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- HEADER REUTILIZABLE -->
+<div id="header"></div>
+
+<main>
+
+  <section class="contact">
+    <h1>Contáctanos</h1>
+
+    <p>
+      Si deseas información sobre nuestros servicios, soporte técnico
+      o presentar alguna aclaración, puedes contactarnos mediante
+      el siguiente formulario.
+    </p>
+
+    <!-- FORMULARIO ACCESIBLE -->
+    <form id="contactForm" aria-label="Formulario de contacto">
+
+      <div class="form-group">
+        <label for="name">Nombre completo</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          aria-required="true"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          aria-required="true"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          aria-required="true"
+        ></textarea>
+      </div>
+
+      <button type="submit">
+        Enviar mensaje
+      </button>
+
+      <!-- Mensajes accesibles -->
+      <p id="formStatus" role="status" aria-live="polite"></p>
+
+    </form>
+
+  </section>
+
+  <!-- INFORMACIÓN DE CONTACTO (PROFECO) -->
+  <section class="contact-info">
+    <h2>Información de contacto</h2>
+
+    <address>
+      <p><strong>Proveedor:</strong> MiISP</p>
+      <p>
+        Correo:
+        <a href="mailto:contacto@miisp.com">
+          contacto@miisp.com
+        </a>
+      </p>
+    </address>
+  </section>
+
+</main>
+
+<!-- FOOTER REUTILIZABLE -->
+<div id="footer"></div>
+
+<script src="js/main.js"></script>
+
+<!-- ENVÍO AL BACKEND -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const status = document.getElementById("formStatus");
+  status.textContent = "Enviando mensaje...";
+
+  const data = {
+    name: this.name.value.trim(),
+    email: this.email.value.trim(),
+    message: this.message.value.trim()
+  };
+
+  try {
+    const response = await fetch("http://localhost:3000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      throw new Error("Error al enviar");
+    }
+
+    status.textContent = "Mensaje enviado correctamente.";
+    this.reset();
+
+  } catch (error) {
+    status.textContent = "No se pudo enviar el mensaje. Intente más tarde.";
+  }
+});
+</script>
+
+</body>
+</html>

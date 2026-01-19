@@ -1,0 +1,386 @@
+/* ==============================
+   VARIABLES GLOBALES
+   ============================== */
+:root {
+  /* Colores base */
+  --color-black: #111111;
+  --color-white: #ffffff;
+
+  /* Marca */
+  --color-blue: #0b3c5d;
+  --color-blue-light: #1e5f8a;
+  --color-pink: #e91e63;
+  --color-yellow: #ffc107;
+
+  /* Mapeo a variables existentes (NO rompe CSS) */
+  --color-primary: var(--color-blue);      /* Navbar, footer, headings */
+  --color-secondary: var(--color-pink);    /* Botones, enlaces */
+  --color-background: var(--color-white);  /* Fondo general */
+  --color-light: #f4f6f8;                   /* Secciones suaves */
+  --color-text: var(--color-black);         /* Texto principal */
+  --color-muted: #6b7280;                   /* Texto secundario */
+
+  --max-width: 1200px;
+}
+
+/* ==============================
+   RESET BÁSICO (W3C SAFE)
+   ============================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+/* ==============================
+   ENLACES
+   ============================== */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* ==============================
+   CONTENEDORES
+   ============================== */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+header {
+  background-color: var(--color-primary);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  text-decoration: underline;
+}
+
+/* ==============================
+   HERO
+   ============================== */
+.hero {
+  background-color: var(--color-light);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: var(--color-muted);
+}
+
+/* ==============================
+   BENEFICIOS
+   ============================== */
+.benefits {
+  margin-top: 3rem;
+}
+
+.benefits h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.benefits article {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.benefits h3 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+/* ==============================
+   FOOTER (LEGAL / PROFECO)
+   ============================== */
+footer {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+}
+
+footer nav {
+  max-width: var(--max-width);
+  margin: 0 auto 1.5rem auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  text-decoration: underline;
+}
+
+footer address {
+  max-width: var(--max-width);
+  margin: 0 auto 1rem auto;
+  font-style: normal;
+}
+
+footer p {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   ACCESIBILIDAD
+   ============================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 2px;
+}
+
+
+/* ==============================
+   RESPONSIVE (MOBILE FIRST)
+   ============================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* ==============================
+   FORMULARIO DE CONTACTO
+   ============================== */
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-secondary);
+  outline: none;
+}
+
+button {
+  background-color: var(--color-secondary); /* Rosa */
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover,
+button:focus-visible {
+  background-color: var(--color-yellow); /* Amarillo */
+  color: var(--color-black);
+}
+
+
+#formStatus {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+/* ==============================
+   PLANES Y PRECIOS
+   ============================== */
+.plans {
+  text-align: center;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plan-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.plan-card h2 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.plan-speed {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.plan-price {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-card li {
+  margin-bottom: 0.5rem;
+}
+
+.plan-notes {
+  margin-top: 3rem;
+}
+
+.plan-notes ul {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   SERVICIOS
+   ============================== */
+.services {
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 1.75rem;
+  background-color: #ffffff;
+}
+
+.service-card h2 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+/* ==============================
+   SOBRE NOSOTROS
+   ============================== */
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about section {
+  margin-top: 2rem;
+}
+
+.about h2 {
+  color: var(--color-primary);
+}

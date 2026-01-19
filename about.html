@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre Nosotros | Apitel</title>
+  <meta name="description" content="Conoce nuestra misión, visión y valores. Conectamos personas.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* --- ESTILOS ESPECÍFICOS PARA ABOUT --- */
+    
+    /* 1. OVERRIDE (Anular) el fondo negro del Global CSS */
+    body {
+        background-color: #f8fafc !important; /* Fondo Gris muy claro/Blanco */
+        color: #333333 !important; /* Texto oscuro */
+    }
+
+    /* 2. HERO ESPECÍFICO */
+    .about-hero {
+        background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue) 100%);
+        padding: 8rem 1.5rem 10rem 1.5rem; /* Más espacio abajo para el efecto flotante */
+        text-align: center;
+        color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        margin-bottom: 0;
+    }
+
+    .about-hero h1 { 
+        color: white; 
+        margin-bottom: 1rem; 
+        font-size: 3rem;
+    }
+    
+    .about-hero p { 
+        color: rgba(255,255,255,0.9); 
+        max-width: 700px; 
+        margin: 0 auto; 
+        font-size: 1.2rem; 
+    }
+
+    /* 3. CONTENEDOR DE MISIÓN/VISIÓN (Efecto Flotante) */
+    .mv-wrapper {
+        margin-top: -8rem; /* Sube sobre el hero */
+        position: relative;
+        z-index: 10;
+        margin-bottom: 5rem;
+        padding: 0 1rem;
+    }
+
+    .mv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .mv-card {
+        background: white;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Sombra suave */
+        text-align: center;
+        transition: transform 0.3s ease;
+        border-top: 5px solid transparent;
+    }
+
+    .mv-card.mission { border-top-color: var(--color-pink); }
+    .mv-card.vision { border-top-color: var(--color-yellow); }
+
+    .mv-card:hover { transform: translateY(-10px); }
+
+    .mv-card h2 {
+        color: var(--color-blue);
+        margin-bottom: 1rem;
+    }
+
+    .mv-card p {
+        color: #555;
+        line-height: 1.7;
+    }
+
+    .mv-icon {
+        width: 80px;
+        height: 80px;
+        background: #f0f4f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem auto;
+        color: var(--color-blue);
+    }
+
+    /* 4. SECCIÓN FULL WIDTH CON IMAGEN */
+    .about-bg-section {
+        /* Asegúrate de que la ruta de la imagen sea correcta */
+        background-image: url('css/img11.jpeg'); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 8rem 1.5rem;
+        position: relative;
+        margin-bottom: 5rem;
+    }
+
+    .about-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to right, rgba(11, 60, 93, 0.9), rgba(11, 60, 93, 0.7));
+    }
+
+    .about-quote {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .about-quote h2 { color: var(--color-yellow); font-size: 2.5rem; margin-bottom: 1rem; }
+    .about-quote p { font-size: 1.4rem; font-style: italic; opacity: 0.95; }
+
+    /* 5. VALORES */
+    .values-container {
+        text-align: center;
+        padding-bottom: 6rem;
+    }
+    
+    .values-container h2 {
+        color: var(--color-blue);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .values-container > p {
+        color: #666;
+        margin-bottom: 3rem;
+    }
+
+    .values-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .value-box {
+        background: white;
+        border: 1px solid #eee;
+        padding: 2.5rem 1.5rem;
+        border-radius: 12px;
+        width: 200px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .value-box:hover {
+        border-color: var(--color-pink);
+        box-shadow: 0 10px 20px rgba(233, 30, 99, 0.15);
+        transform: translateY(-5px);
+    }
+
+    .value-icon {
+        color: var(--color-pink);
+        margin-bottom: 1rem;
+    }
+
+    .value-box h3 {
+        font-size: 1.1rem;
+        color: var(--color-blue);
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        
+        <!-- HERO HEADER -->
+        <section class="about-hero">
+            <h1>Nuestra Esencia</h1>
+            <p>
+                Más que cables y fibra óptica, somos el enlace que conecta tus sueños con las oportunidades del mundo digital.
+            </p>
+        </section>
+
+        <!-- MISIÓN Y VISIÓN (FLOTANTES) -->
+        <div class="mv-wrapper">
+            <div class="mv-grid">
+                
+                <!-- Card Misión -->
+                <article class="mv-card mission">
+                    <div class="mv-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                    </div>
+                    <h2>Misión</h2>
+                    <p>
+                        Brindar servicios de internet confiables, rápidos y seguros, ofreciendo soluciones tecnológicas de alta calidad que permitan a nuestros clientes comunicarse, trabajar y crecer en un entorno digital eficiente.
+                    </p>
+                </article>
+
+                <!-- Card Visión -->
+                <article class="mv-card vision">
+                    <div class="mv-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h2>Visión</h2>
+                    <p>
+                        Ser la empresa líder en servicios de internet en nuestra región, reconocida por la innovación, la excelencia en el servicio y la satisfacción de nuestros clientes.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- SECCIÓN FULL WIDTH (COMPROMISO) -->
+        <section class="about-bg-section">
+            <div class="about-overlay"></div>
+            <div class="about-quote">
+                <h2>Impulsando el futuro</h2>
+                <p>
+                    "Creemos que una conexión estable es la base de la productividad moderna. 
+                    Por eso invertimos en la mejor infraestructura para ti."
+                </p>
+            </div>
+        </section>
+
+        <!-- VALORES -->
+        <section class="container values-container">
+            <h2>Nuestros Valores</h2>
+            <p>Los pilares que sostienen cada conexión que realizamos.</p>
+
+            <div class="values-grid">
+                <!-- Respeto -->
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3>Respeto</h3>
+                </div>
+
+                <!-- Honestidad -->
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                    </div>
+                    <h3>Honestidad</h3>
+                </div>
+
+                <!-- Lealtad -->
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Lealtad</h3>
+                </div>
+
+                <!-- Eficiencia -->
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h3>Eficiencia</h3>
+                </div>
+
+                <!-- Compromiso -->
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"></circle><line x1="12" y1="22" x2="12" y2="8"></line><path d="M5 12H2a10 10 0 0 0 20 0h-3"></path></svg>
+                    </div>
+                    <h3>Compromiso</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

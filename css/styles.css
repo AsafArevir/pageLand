@@ -1,0 +1,676 @@
+/* ==============================
+   1. VARIABLES DE MARCA
+   ============================== */
+:root {
+  --color-blue: #0b3c5d;
+  --color-blue-dark: #072a42;
+  --color-pink: #e91e63;
+  --color-yellow: #ffc107;
+  --color-black: #111111;
+  --color-white: #ffffff;
+  --color-gray-light: #f4f4f4;
+  --color-text-main: #333333;
+
+  --radius: 8px;
+  --header-height: 70px;
+}
+
+/* ==============================
+   2. BASE
+   ============================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-black);
+  /* Fondo base negro para evitar flash blanco */
+  line-height: 1.6;
+  padding-top: var(--header-height);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==============================
+   3. NAVBAR (Fondo Blanco - Logo Visible)
+   ============================== */
+header {
+  background-color: var(--color-white); /* CAMBIO: Fondo blanco */
+  /* Cambiamos el borde a gris suave o rosa para separar del contenido */
+  border-bottom: 1px solid #e5e5e5; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: var(--header-height);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Ajustes del Logo Imagen en Header */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 50px; /* Tamaño del logo */
+  width: auto;
+  /* NO aplicamos filtro aquí, así se ve el logo negro original */
+}
+
+/* CONTENEDOR DE ENLACES */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* LOS ENLACES (Ahora oscuros para verse sobre blanco) */
+.nav-links a {
+  color: var(--color-text-main); /* CAMBIO: Texto gris oscuro/negro */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+/* EFECTO HOVER */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-pink); /* Línea rosa al pasar mouse */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-pink); /* Texto rosa al pasar mouse */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BOTÓN MENÚ MÓVIL (Hamburguesa) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-black); /* CAMBIO: Icono negro para verse en blanco */
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* RESPONSIVE (Celulares) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    /* El menú desplegable también debe ser blanco */
+    background-color: var(--color-white); 
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* ==============================
+   AJUSTES LOGO (IMAGEN)
+   ============================== */
+
+/* Logo en el Header */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* Toma la altura del contenedor */
+  text-decoration: none;
+}
+
+.logo img {
+  /* Altura controlada para que no rompa el navbar de 70px */
+  height: 50px;
+  width: auto;
+  /* Mantiene la proporción */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+  /* Efecto zoom sutil al pasar el mouse */
+}
+
+/* Logo en el Footer */
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-logo img {
+  /* En el footer puede ser un poco más grande si quieres */
+  height: 60px;
+  width: auto;
+}
+
+/* ==============================
+   4. BOTONES (Rosa y Amarillo)
+   ============================== */
+.btn {
+  display: inline-block;
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+.btn:hover {
+  background-color: #c2185b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.6);
+}
+
+.btn-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+.btn-yellow:hover {
+  background-color: #ffca2c;
+  color: black;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+/* ==============================
+   5. SECCIONES "COLOR BLOCKING"
+   ============================== */
+main {
+  max-width: 100%;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 5rem 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- SECCIÓN BLANCA (Limpieza) --- */
+.bg-white {
+  background-color: var(--color-white);
+  color: var(--color-text-main);
+}
+
+.bg-white h2 {
+  color: var(--color-blue);
+}
+
+/* --- SECCIÓN NEGRA (Elegancia) --- */
+.bg-black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.bg-black h2 {
+  color: var(--color-white);
+}
+
+.bg-black p {
+  color: #cccccc;
+}
+
+/* --- SECCIÓN AMARILLA (Energía) --- */
+.bg-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.bg-yellow h2 {
+  color: var(--color-black);
+}
+
+
+/* ==============================
+   6. HERO (Azul Corporativo)
+   ============================== */
+.hero-full {
+  position: relative;
+  /* Gradiente Azul a Negro abajo */
+  background-image: linear-gradient(to bottom, rgba(11, 60, 93, 0.7), rgba(0, 0, 0, 0.8)), url('img6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ==============================
+   7. BENEFICIOS (Tarjetas Blancas con acentos)
+   ============================== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--color-gray-light);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border-top: 5px solid var(--color-blue);
+  /* Borde Azul por defecto */
+  transition: transform 0.3s;
+}
+
+/* Alternamos colores de borde */
+.card:nth-child(2) {
+  border-top-color: var(--color-pink);
+}
+
+.card:nth-child(3) {
+  border-top-color: var(--color-yellow);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+
+/* ==============================
+   8. IMÁGENES FULL WIDTH (Transición a Negro)
+   ============================== */
+.image-section {
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bg-work {
+  /* Fades into Black */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 60%), url('img10.jpg');
+  justify-content: flex-start;
+}
+
+.bg-family {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, transparent 60%), url('img9.jpg');
+  justify-content: flex-end;
+}
+
+.floating-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-black);
+  padding: 3rem;
+  max-width: 500px;
+  margin: 0 5%;
+  border-radius: 4px;
+  border-left: 8px solid var(--color-pink);
+  /* Acento Rosa */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.floating-card h2 {
+  color: var(--color-blue);
+  font-size: 2rem;
+}
+
+/* ==============================
+   9. GALERÍA (Fondo Negro)
+   ============================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, var(--color-black), transparent);
+  padding: 1.5rem;
+  color: white;
+}
+
+.gallery-caption h3 {
+  color: var(--color-yellow);
+  margin-bottom: 0.2rem;
+}
+
+/* Texto Amarillo */
+
+/* ==============================
+   10. ESTILOS ABOUT & OTRAS
+   ============================== */
+.mv-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mv-card.mission {
+  border-top: 5px solid var(--color-pink);
+}
+
+.mv-card.vision {
+  border-top: 5px solid var(--color-yellow);
+}
+
+.value-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 200px;
+  transition: 0.3s;
+}
+
+.value-box:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.value-icon {
+  color: var(--color-pink);
+}
+
+/* ==============================
+   11. FOOTER (Ordenado y Negro)
+   ============================== */
+footer {
+  background-color: var(--color-black);
+  color: #888;
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+/* Arreglo de la lista desordenada */
+.footer-links {
+  list-style: none;
+  /* Quita los puntos */
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  /* Pone los elementos en fila */
+  justify-content: center;
+  /* Centra la fila */
+  flex-wrap: wrap;
+  /* Permite que baje en celulares */
+  gap: 2rem;
+  /* Espacio entre enlaces */
+}
+
+.footer-links a {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  /* Para efecto hover */
+}
+
+.footer-links a:hover {
+  color: var(--color-yellow);
+  border-bottom-color: var(--color-pink);
+}
+
+/* Estilo para la dirección y contacto */
+footer address {
+  font-style: normal;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+footer address a {
+  color: var(--color-pink);
+  font-weight: bold;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 2rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+}
+
+/* ==============================
+   11. FOOTER (Ordenado y Negro)
+   ============================== */
+footer {
+  background-color: var(--color-black);
+  color: #888;
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+/* Arreglo de la lista desordenada */
+.footer-links {
+  list-style: none;
+  /* Quita los puntos */
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  /* Pone los elementos en fila */
+  justify-content: center;
+  /* Centra la fila */
+  flex-wrap: wrap;
+  /* Permite que baje en celulares */
+  gap: 2rem;
+  /* Espacio entre enlaces */
+}
+
+.footer-links a {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  /* Para efecto hover */
+}
+
+.footer-links a:hover {
+  color: var(--color-yellow);
+  border-bottom-color: var(--color-pink);
+}
+
+/* Estilo para la dirección y contacto */
+footer address {
+  font-style: normal;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+footer address a {
+  color: var(--color-pink);
+  font-weight: bold;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 2rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+}
+
+/* ==============================
+   12. RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--color-black);
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--color-yellow);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-full {
+    height: 70vh;
+  }
+
+  .image-section {
+    flex-direction: column;
+    padding: 4rem 1rem;
+    justify-content: center;
+  }
+
+  .floating-card {
+    width: 100%;
+    margin: 0;
+    border-left: none;
+    border-top: 8px solid var(--color-pink);
+  }
+}
+
+.footer-logo img {
+    filter: brightness(0) invert(1);
+}
