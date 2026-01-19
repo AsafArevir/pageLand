@@ -691,6 +691,39 @@ footer address a {
   
   /* Ajuste de Galería */
   .gallery-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* --- 2. CORRECCIÓN CONTACTO Y CARDS --- */
+  .contact-wrapper {
+    /* Reducimos el margen negativo para que no tape el título */
+    margin-top: -2rem; 
+    /* Centramos el contenedor */
+    margin-left: auto; 
+    margin-right: auto;
+    /* Aseguramos que no toque los bordes de la pantalla */
+    width: 90%; 
+    padding: 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 2rem;
+  }
+
+  /* Forzamos que las tarjetas ocupen el ancho disponible y no se desborden */
+  .info-card, 
+  .form-card {
+    width: 100%; 
+    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+    padding: 1.5rem; /* Padding más pequeño para celular */
+  }
+
+  /* Ajuste de los inputs para que no se salgan */
+  .form-group input, 
+  .form-group textarea {
+    width: 100%;
+    min-width: 0; /* Evita desbordamiento en flex/grid */
+  }
   
   /* Ajuste Footer */
   .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
