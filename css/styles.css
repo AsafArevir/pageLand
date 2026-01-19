@@ -850,3 +850,146 @@ footer address a {
     .plans-page-hero { padding: 6rem 1.5rem 8rem 1.5rem; }
     .plans-section { margin-top: -6rem; }
 }
+
+/* ==============================
+   ESTILOS ESPECÍFICOS: CONTACTO
+   ============================== */
+
+/* 1. HERO DE CONTACTO (Consistente con About/Plans) */
+.contact-hero {
+    background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue) 100%);
+    padding: 8rem 1.5rem 12rem 1.5rem; /* Mucho padding abajo para el contenido flotante */
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 0;
+}
+
+.contact-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.contact-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+
+/* 2. CONTENEDOR PRINCIPAL FLOTANTE */
+.contact-wrapper {
+    max-width: 1100px;
+    margin: -10rem auto 5rem auto; /* Sube sobre el hero */
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Columna info más pequeña, form más grande */
+    gap: 3rem;
+}
+
+/* 3. COLUMNA IZQUIERDA: INFORMACIÓN */
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: transform 0.3s;
+    border-left: 5px solid var(--color-yellow);
+}
+
+.info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+.info-icon {
+    background: #f0f4f8;
+    color: var(--color-blue);
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-content h3 { font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--color-blue-dark); }
+.info-content p { color: #666; font-size: 0.95rem; margin: 0; }
+.info-content a { color: var(--color-pink); font-weight: 600; }
+
+
+/* 4. COLUMNA DERECHA: FORMULARIO */
+.form-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.form-card h2 { color: var(--color-blue); margin-bottom: 2rem; }
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #444;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-blue);
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(11, 60, 93, 0.1);
+}
+
+/* Botón de envío */
+.submit-btn {
+    width: 100%;
+    background-color: var(--color-pink);
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover { background-color: #c2185b; }
+
+/* Mensajes de Estado */
+#formStatus {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+.status-success { background-color: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+.status-error { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-hero { padding-bottom: 6rem; }
+    .contact-wrapper { margin-top: -4rem; }
+    .form-card { padding: 1.5rem; }
+}
