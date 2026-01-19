@@ -630,49 +630,72 @@ footer address a {
 }
 
 /* ==============================
-   12. RESPONSIVE
+   12. RESPONSIVE (CORRECCIÓN MÓVIL)
    ============================== */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
+  
+  /* MENÚ MÓVIL */
+  .menu-toggle { display: block; }
   .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background-color: var(--color-black);
-    padding: 1.5rem;
-    border-bottom: 2px solid var(--color-yellow);
+    display: none; flex-direction: column; position: absolute;
+    top: var(--header-height); left: 0; width: 100%;
+    background-color: var(--color-white); padding: 1.5rem;
+    border-top: 1px solid #eee;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
   }
+  .nav-links.active { display: flex; }
 
-  .nav-links.active {
-    display: flex;
-  }
-
+  /* --- ARREGLO DEL HERO EN MÓVIL --- */
   .hero-full {
-    height: 70vh;
+    height: auto; /* Deja que la altura se adapte al contenido */
+    min-height: 85vh; /* Mantiene la pantalla llena */
+    padding-top: 6rem; /* Espacio para que no lo tape el navbar */
+    padding-bottom: 4rem;
   }
 
-  .image-section {
-    flex-direction: column;
-    padding: 4rem 1rem;
-    justify-content: center;
-  }
-
-  .floating-card {
+  .hero-content {
+    padding: 0 1.5rem; /* Margen lateral para que no toque los bordes */
     width: 100%;
-    margin: 0;
-    border-left: none;
-    border-top: 8px solid var(--color-pink);
   }
-}
 
-.footer-logo img {
-    filter: brightness(0) invert(1);
+  .hero-content h1 {
+    font-size: 2rem; /* Reducimos la letra (antes era 3.5rem) */
+    line-height: 1.2;
+    word-wrap: break-word; /* IMPORTANTE: Evita que palabras largas se salgan */
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Ajuste de botones en móvil para que quepan uno al lado del otro o se apilen */
+  .hero-buttons {
+    flex-direction: row; /* Mantener en fila si caben */
+    flex-wrap: wrap;     /* Si no caben, que bajen */
+    gap: 1rem;
+  }
+  
+  .hero-buttons .btn {
+    padding: 0.8rem 1.5rem; /* Botones un poco más compactos */
+    font-size: 0.95rem;
+    flex: 1; /* Para que tengan el mismo ancho */
+    min-width: 120px;
+  }
+
+  /* --- OTROS AJUSTES MÓVILES --- */
+  .image-section { flex-direction: column; padding: 4rem 1rem; justify-content: center; }
+  .floating-card { width: 100%; margin: 0; border-left: none; border-top: 8px solid var(--color-pink); }
+  
+  /* Ajuste de Galería */
+  .gallery-grid { grid-template-columns: 1fr; gap: 2rem; }
+  
+  /* Ajuste Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+  .footer-col h3::after { left: 50%; transform: translateX(-50%); }
+  .contact-list li, .social-icons { justify-content: center; }
 }
 
 /* ==============================
