@@ -1,77 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>Planes y Precios | MiISP</title>
-  <meta name="description" content="Planes de internet fibra óptica. Precios transparentes.">
+  <title>Planes de Internet | Apitel</title>
+  <meta name="description" content="Planes de internet de alta velocidad. Precios transparentes y sin plazos forzosos.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Override para fondo limpio en esta página */
+    body {
+      background-color: #f8fafc !important;
+      color: #333 !important;
+    }
+  </style>
 </head>
+
 <body>
 
-<div id="header"></div>
+  <div id="header"></div>
 
-<main>
-  <section class="plans">
-    <div style="text-align: center; margin: 3rem 0;">
-      <h1>Planes Residenciales</h1>
-      <p>Sin letras chiquitas. Precios con impuestos incluidos.</p>
-    </div>
+  <main>
 
-    <div class="plans-grid">
-      <!-- PLAN 1 -->
-      <article class="plan-card">
-        <h2>Básico</h2>
-        <div class="plan-speed">50 <span>Mbps</span></div>
-        <p class="plan-price">$399 MXN <span style="font-size:0.9rem">/mes</span></p>
-        <ul class="plan-features">
-          <li>Ideal para 1-3 dispositivos</li>
-          <li>Redes sociales y correo</li>
-          <li>Soporte estándar</li>
-        </ul>
-        <a href="contact.html?plan=basico" class="btn btn-outline" style="color:var(--color-primary); border-color:var(--color-primary);">Contratar</a>
-      </article>
+    <!-- 1. HERO HEADER (Estilo About) -->
+    <section class="plans-page-hero">
+      <h1>Nuestros Planes</h1>
+      <p>Velocidad simétrica, precios justos y sin letras chiquitas. <br>Elige la velocidad que se adapta a tu vida.</p>
+    </section>
 
-      <!-- PLAN 2 (DESTACADO) -->
-      <article class="plan-card featured">
-        <h2>Familiar</h2>
-        <div class="plan-speed">100 <span>Mbps</span></div>
-        <p class="plan-price">$599 MXN <span style="font-size:0.9rem">/mes</span></p>
-        <ul class="plan-features">
-          <li>Ideal para streaming HD</li>
-          <li>Clases en línea / Zoom</li>
-          <li>Soporte Prioritario</li>
-          <li>Instalación gratis*</li>
-        </ul>
-        <a href="contact.html?plan=familiar" class="btn">Lo Quiero</a>
-      </article>
+    <!-- 2. SECCIÓN DE PLANES (FLOTANTE) -->
+    <section class="plans-section">
 
-      <!-- PLAN 3 -->
-      <article class="plan-card">
-        <h2>Gamer / Pro</h2>
-        <div class="plan-speed">300 <span>Mbps</span></div>
-        <p class="plan-price">$999 MXN <span style="font-size:0.9rem">/mes</span></p>
-        <ul class="plan-features">
-          <li>Descargas ultra rápidas</li>
-          <li>Juegos online baja latencia</li>
-          <li>IP Pública Dinámica</li>
-        </ul>
-        <a href="contact.html?plan=pro" class="btn btn-outline" style="color:var(--color-primary); border-color:var(--color-primary);">Contratar</a>
-      </article>
-    </div>
-  </section>
+      <div class="plans-grid">
 
-  <section style="background: #eef2f6; padding: 2rem; border-radius: 8px; margin-top: 3rem;">
-    <h3>📝 Información Legal Importante</h3>
-    <ul style="list-style-type: disc; padding-left: 1.5rem; color: #555;">
-      <li>Tarifas registradas ante el IFT.</li>
-      <li>La velocidad de navegación puede variar dependiendo de la distancia al router y el dispositivo utilizado.</li>
-      <li>*Instalación gratuita sujeta a firma de contrato por 12 meses.</li>
-    </ul>
-  </section>
-</main>
+        <!-- PLAN 1: PLAN INICIAL (Del PDF 1) -->
+        <article class="pricing-card">
+          <div class="pricing-header">
+            <h2>Inicial</h2>
+          </div>
 
-<div id="footer"></div>
-<script src="js/main.js"></script>
+          <div class="pricing-body">
+            <div class="price-tag">$400<sup style="font-size:1.5rem">**</sup></div>
+            <span class="price-period">Mensual</span>
+
+            <ul class="pricing-features">
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+                Bajada: <strong>40 Mbps</strong>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                </svg>
+                Subida: <strong>40 Mbps</strong>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                </svg>
+                Velocidad simétrica
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                  </path>
+                </svg>
+                Mensualidad fija (Prepago)
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Sin plazo forzoso
+              </li>
+            </ul>
+
+            <a href="contact.html?plan=inicial" class="btn btn-outline pricing-btn"
+              style="border-color:var(--color-blue); color:var(--color-blue)">Me Interesa</a>
+
+            <div class="ift-folio">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              <a href="./css/PLAN INICIAL.pdf" target="_blank">Folio IFT: 2371352</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- PLAN 2: PLAN CONTRATA -->
+        <article class="pricing-card featured">
+          <div class="pricing-header">
+            <h2>Contrata Facil<sup style="font-size:1.5rem">*</sup></h2>
+          </div>
+
+          <div class="pricing-body">
+            <div class="price-tag">$400<sup style="font-size:1.5rem">**</sup></div>
+            <span class="price-period">Mensual</span>
+
+            <ul class="pricing-features">
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+                Bajada: <strong>40 Mbps</strong>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                </svg>
+                Subida: <strong>40 Mbps</strong>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                </svg>
+                Velocidad simétrica
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                  </path>
+                </svg>
+                Mensualidad fija (Prepago)
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Sin plazo forzoso
+              </li>
+            </ul>
+
+            <a href="contact.html?plan=plus" class="btn pricing-btn">Me Interesa</a>
+
+            <div class="ift-folio">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              <a href="./css/CONTRATA FÁCIL.pdf" target="_blank">Folio IFT: 2371350</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- NOTAS LEGALES -->
+      <div class="legal-note">
+        <p><strong>* Disponible solo en Estado de México</strong></p>
+        <p><strong>** Precios en Moneda Nacional (MXN). Incluyen Impuestos.</strong></p>
+
+        <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+          Tarifas inscritas en el Registro Público de Concesiones del Instituto Federal de Telecomunicaciones (IFT).
+          La velocidad de navegación puede variar dependiendo de la distancia al router, interferencias y
+          características de los dispositivos del usuario.
+        </p>
+        <p style="font-size: 0.85rem;">
+          Para mayor información respecto a las tarifas puede consultar el visor de tarifas de la Comisión Reguladora de
+          Telecomunicaciones, en la liga: <a href="https://tarifas.ift.org.mx/ift_visor/" target="_blank">https://tarifas.ift.org.mx/ift_visor/</a>
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>

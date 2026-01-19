@@ -674,3 +674,179 @@ footer address a {
 .footer-logo img {
     filter: brightness(0) invert(1);
 }
+
+/* ==============================
+   ESTILOS ESPECÍFICOS: PLANES (HERO + CARDS)
+   ============================== */
+
+/* 1. HERO DE PLANES (Igual al de About) */
+.plans-page-hero {
+    background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue) 100%);
+    padding: 8rem 1.5rem 10rem 1.5rem; /* Padding extra abajo para el efecto flotante */
+    text-align: center;
+    color: white;
+    /* Corte diagonal moderno */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); 
+    margin-bottom: 0;
+}
+
+.plans-page-hero h1 { 
+    color: white; 
+    margin-bottom: 1rem; 
+    font-size: 3rem; 
+}
+
+.plans-page-hero p { 
+    color: rgba(255,255,255,0.9); 
+    max-width: 700px; 
+    margin: 0 auto; 
+    font-size: 1.2rem; 
+}
+
+/* 2. CONTENEDOR PRINCIPAL (Flotante) */
+.plans-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem 1.5rem;
+    position: relative;
+    z-index: 10;
+    margin-top: -8rem; /* TRUCO: Sube las tarjetas sobre el hero azul */
+}
+
+/* Grid de Planes */
+.plans-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Diseño de la Tarjeta (Card) */
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    /* Sombra fuerte para resaltar sobre el fondo */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+    width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Encabezado de la tarjeta */
+.pricing-header {
+    background-color: var(--color-blue);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.pricing-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Plan Plus (Rosa) */
+.pricing-card.featured .pricing-header {
+    background-color: var(--color-pink);
+}
+
+/* Cuerpo de la tarjeta */
+.pricing-body {
+    padding: 2rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Precios */
+.price-tag {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.price-tag sup { font-size: 1.5rem; top: -1em; }
+
+.price-period {
+    display: block;
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* Lista */
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pricing-features svg { width: 20px; height: 20px; flex-shrink: 0; }
+.pricing-card .pricing-features svg { color: var(--color-blue); }
+.pricing-card.featured .pricing-features svg { color: var(--color-pink); }
+
+/* Folio y Notas */
+.ift-folio {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: auto;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.legal-note {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.5rem;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.pricing-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-card { width: 100%; }
+    .plans-page-hero { padding: 6rem 1.5rem 8rem 1.5rem; }
+    .plans-section { margin-top: -6rem; }
+}
