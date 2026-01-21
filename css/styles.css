@@ -933,3 +933,79 @@ footer address a {
     padding-bottom: 5rem;
   }
 }
+
+/* ==============================
+   BOTONES FLOTANTES (ESTILO APP OFICIAL)
+   ============================== */
+.floating-socials {
+  position: fixed;
+  bottom: 25px; /* Un poco más pegado al borde */
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2000;
+  
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-socials.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.float-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Sombra elegante */
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none; /* Quita subrayado */
+}
+
+/* Efecto al pasar el mouse (Crece un poco) */
+.float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* Colores OFICIALES de las marcas */
+.fb-btn {
+  background-color: #1877F2; /* Azul Facebook Oficial */
+}
+
+.wa-btn {
+  background-color: #25D366; /* Verde WhatsApp Oficial */
+}
+
+/* Centrado perfecto de los iconos SVG */
+.float-btn svg {
+  display: block;
+  /* Los tamaños ya están definidos en el HTML (width/height) para precisión */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .floating-socials {
+    bottom: 20px;
+    right: 20px;
+    gap: 12px;
+  }
+  
+  /* En celular los hacemos un pelín más pequeños pero cómodos al tacto */
+  .float-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  /* Ajuste proporcional del icono dentro */
+  .fb-btn svg { width: 32px; height: 32px; }
+  .wa-btn svg { width: 30px; height: 30px; }
+}

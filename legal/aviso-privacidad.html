@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Ajusta la ruta si tu archivo no está en una carpeta 'legal' -->
     <link rel="stylesheet" href="../css/styles.css">
-    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="../css/logo.png">
     <style>
         /* --- CORRECCIÓN VISUAL: MODO CLARO --- */
-        
+
         /* 1. Forzar fondo claro para esta página (Ignora el negro global) */
         body {
             background-color: #f4f6f8 !important;
@@ -23,8 +24,10 @@
             background: #ffffff;
             padding: 4rem;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Sombra elegante */
-            max-width: 900px; /* Ancho cómodo para lectura */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            /* Sombra elegante */
+            max-width: 900px;
+            /* Ancho cómodo para lectura */
             margin: 2rem auto 5rem auto;
             border: 1px solid #e2e8f0;
         }
@@ -40,10 +43,12 @@
 
         .legal-document h2 {
             font-size: 1.4rem;
-            color: var(--color-blue-dark); /* Azul oscuro */
+            color: var(--color-blue-dark);
+            /* Azul oscuro */
             margin-top: 3rem;
             margin-bottom: 1.5rem;
-            border-left: 5px solid var(--color-pink); /* Detalle de marca */
+            border-left: 5px solid var(--color-pink);
+            /* Detalle de marca */
             padding-left: 1rem;
         }
 
@@ -55,15 +60,16 @@
         }
 
         /* 4. Textos y Listas */
-        .legal-document p, 
+        .legal-document p,
         .legal-document li {
-            color: #444 !important; /* Gris oscuro para lectura */
+            color: #444 !important;
+            /* Gris oscuro para lectura */
             text-align: justify;
             line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .legal-document ul, 
+        .legal-document ul,
         .legal-document ol {
             padding-left: 1.5rem;
             margin-bottom: 1.5rem;
@@ -115,7 +121,7 @@
             border-radius: 8px;
             margin: 2rem 0;
         }
-        
+
         .highlight-box ul {
             list-style: none;
             padding: 0;
@@ -135,9 +141,20 @@
         }
 
         @media (max-width: 768px) {
-            .legal-document { padding: 1.5rem; margin: 1rem; }
-            .doc-header { flex-direction: column; align-items: flex-start; }
-            .btn-download { width: 100%; justify-content: center; }
+            .legal-document {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .doc-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -149,15 +166,16 @@
 
     <main>
         <section class="legal-document">
-            
+
             <!-- Encabezado con título y botón -->
             <div class="doc-header">
                 <h1>AVISO DE PRIVACIDAD</h1>
-                
+
                 <!-- BOTÓN DE DESCARGA -->
                 <!-- Asegúrate de tener el archivo 'aviso_priv.pdf' en la carpeta correcta -->
                 <a href="../docs/aviso_priv.pdf" download="Aviso_Privacidad_APITEL.pdf" class="btn-download">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -167,19 +185,25 @@
             </div>
 
             <p>
-                En cumplimiento a la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</strong> vigente (la “LFPDPPP”), su Reglamento y Lineamientos aplicables en México, se pone a disposición del titular de datos personales el siguiente Aviso de Privacidad Integral.
+                En cumplimiento a la <strong>Ley Federal de Protección de Datos Personales en Posesión de los
+                    Particulares</strong> vigente (la “LFPDPPP”), su Reglamento y Lineamientos aplicables en México, se
+                pone a disposición del titular de datos personales el siguiente Aviso de Privacidad Integral.
             </p>
 
             <h2>IDENTIDAD Y DOMICILIO DEL RESPONSABLE</h2>
             <p>
-                <strong>APITEL MEXICO</strong> (en lo sucesivo, el “Proveedor”), con domicilio en Querétaro, México, es responsable del uso y protección de sus datos personales, y le informa que los mismos serán tratados estrictamente para los fines que más adelante se señalan.
+                <strong>APITEL MEXICO</strong> (en lo sucesivo, el “Proveedor”), con domicilio en Querétaro, México, es
+                responsable del uso y protección de sus datos personales, y le informa que los mismos serán tratados
+                estrictamente para los fines que más adelante se señalan.
             </p>
 
             <div class="highlight-box">
-                <p style="margin-top:0; color:var(--color-blue); font-weight:bold;">Oficina de Privacidad y Contacto:</p>
+                <p style="margin-top:0; color:var(--color-blue); font-weight:bold;">Oficina de Privacidad y Contacto:
+                </p>
                 <ul>
                     <li>
-                        <strong>Correo:</strong> <a href="mailto:apitelmexicoconta@gmail.com">apitelmexicoconta@gmail.com</a>
+                        <strong>Correo:</strong> <a
+                            href="mailto:apitelmexicoconta@gmail.com">apitelmexicoconta@gmail.com</a>
                     </li>
                     <li>
                         <strong>Teléfono:</strong> 442 719 5306
@@ -193,11 +217,14 @@
             <h2>DATOS PERSONALES RECABADOS</h2>
             <p>Para la prestación de nuestros servicios, recabamos los siguientes datos:</p>
             <ol type="i">
-                <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, domicilio de instalación, correo electrónico, números telefónicos (fijo/móvil) y RFC.</li>
-                <li><strong>Datos Financieros:</strong> Información relativa a formas de pago, historial de facturación y, en su caso, comportamiento crediticio.</li>
+                <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, domicilio de instalación,
+                    correo electrónico, números telefónicos (fijo/móvil) y RFC.</li>
+                <li><strong>Datos Financieros:</strong> Información relativa a formas de pago, historial de facturación
+                    y, en su caso, comportamiento crediticio.</li>
             </ol>
             <p>
-                <em>Nota Importante:</em> Apitel México <strong>NO recaba datos personales sensibles</strong> (como origen racial, salud, creencias religiosas, etc.) para la prestación ordinaria del servicio de internet.
+                <em>Nota Importante:</em> Apitel México <strong>NO recaba datos personales sensibles</strong> (como
+                origen racial, salud, creencias religiosas, etc.) para la prestación ordinaria del servicio de internet.
             </p>
 
             <h2>FINALIDADES DEL TRATAMIENTO</h2>
@@ -217,33 +244,52 @@
                 <li>Envío de promociones o información comercial de nuevos productos.</li>
             </ul>
             <p>
-                Si usted no desea que sus datos sean tratados para estas finalidades secundarias, puede manifestar su negativa enviando un correo a <a href="mailto:apitelmexicoconta@gmail.com">apitelmexicoconta@gmail.com</a> en un plazo de 5 días hábiles posteriores a la aceptación de este aviso.
+                Si usted no desea que sus datos sean tratados para estas finalidades secundarias, puede manifestar su
+                negativa enviando un correo a <a
+                    href="mailto:apitelmexicoconta@gmail.com">apitelmexicoconta@gmail.com</a> en un plazo de 5 días
+                hábiles posteriores a la aceptación de este aviso.
             </p>
 
             <h2>TRANSFERENCIA DE DATOS</h2>
             <p>
-                Sus datos personales no serán transferidos a terceros sin su consentimiento, salvo las excepciones previstas en el artículo 37 de la Ley (ej. requerimientos de autoridades competentes, cumplimiento de obligaciones legales o sociedades del mismo grupo corporativo).
+                Sus datos personales no serán transferidos a terceros sin su consentimiento, salvo las excepciones
+                previstas en el artículo 37 de la Ley (ej. requerimientos de autoridades competentes, cumplimiento de
+                obligaciones legales o sociedades del mismo grupo corporativo).
             </p>
 
             <h2>DERECHOS ARCO</h2>
             <p>
-                Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (<strong>Acceso</strong>). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (<strong>Rectificación</strong>); que la eliminemos de nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada conforme a los principios, deberes y obligaciones previstas en la normativa (<strong>Cancelación</strong>); así como oponerse al uso de sus datos personales para fines específicos (<strong>Oposición</strong>).
+                Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las
+                condiciones del uso que les damos (<strong>Acceso</strong>). Asimismo, es su derecho solicitar la
+                corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta
+                (<strong>Rectificación</strong>); que la eliminemos de nuestros registros o bases de datos cuando
+                considere que la misma no está siendo utilizada conforme a los principios, deberes y obligaciones
+                previstas en la normativa (<strong>Cancelación</strong>); así como oponerse al uso de sus datos
+                personales para fines específicos (<strong>Oposición</strong>).
             </p>
             <p>
-                Para ejercer sus derechos ARCO, envíe una solicitud a nuestra Oficina de Privacidad al correo electrónico señalado anteriormente.
+                Para ejercer sus derechos ARCO, envíe una solicitud a nuestra Oficina de Privacidad al correo
+                electrónico señalado anteriormente.
             </p>
 
             <h2>USO DE COOKIES</h2>
             <p>
-                Le informamos que en nuestra página de Internet utilizamos cookies y otras tecnologías a través de las cuales es posible monitorear su comportamiento como usuario de Internet, brindarle un mejor servicio y experiencia de usuario al navegar en nuestra página.
+                Le informamos que en nuestra página de Internet utilizamos cookies y otras tecnologías a través de las
+                cuales es posible monitorear su comportamiento como usuario de Internet, brindarle un mejor servicio y
+                experiencia de usuario al navegar en nuestra página.
             </p>
 
             <h2>CAMBIOS AL AVISO DE PRIVACIDAD</h2>
             <p>
-                El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de privacidad; o por otras causas. Nos comprometemos a mantenerlo informado sobre los cambios que pueda sufrir el presente aviso de privacidad a través de nuestro sitio web.
+                El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de
+                nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que
+                ofrecemos; de nuestras prácticas de privacidad; o por otras causas. Nos comprometemos a mantenerlo
+                informado sobre los cambios que pueda sufrir el presente aviso de privacidad a través de nuestro sitio
+                web.
             </p>
 
-            <p style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; color: #888; font-size: 0.9rem;">
+            <p
+                style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; color: #888; font-size: 0.9rem;">
                 Fecha de última actualización: <strong>13 de agosto de 2025</strong>
             </p>
 

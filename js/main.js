@@ -88,3 +88,23 @@ function fixRelativeLinks(container) {
     }
   });
 }
+
+/* =========================================
+   LÓGICA BOTONES FLOTANTES (SCROLL)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const socialButtons = document.getElementById("floatingSocials");
+
+  // Solo ejecutamos si los botones existen en la página
+  if (socialButtons) {
+    window.addEventListener("scroll", () => {
+      // Si bajamos más de 300px, mostrar botones
+      if (window.scrollY > 300) {
+        socialButtons.classList.add("is-visible");
+      } else {
+        // Si subimos al inicio, ocultarlos
+        socialButtons.classList.remove("is-visible");
+      }
+    });
+  }
+});
