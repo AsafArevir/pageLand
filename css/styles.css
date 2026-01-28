@@ -252,7 +252,7 @@ section {
 /* HERO INICIO */
 .hero-full {
   position: relative;
-  background-image: linear-gradient(to bottom, rgba(11, 60, 93, 0.7), rgba(0, 0, 0, 0.8)), url('img6.jpg');
+  background-image: linear-gradient(to bottom, rgba(11, 60, 93, 0.7), rgba(0, 0, 0, 0.8)), url('img6.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -328,12 +328,12 @@ section {
 }
 
 .bg-work {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 60%), url('img10.jpg');
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 60%), url('img10.webp');
   justify-content: flex-start;
 }
 
 .bg-family {
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, transparent 60%), url('img9.jpg');
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, transparent 60%), url('img9.webp');
   justify-content: flex-end;
 }
 
